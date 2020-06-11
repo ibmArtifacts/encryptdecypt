@@ -21,8 +21,9 @@
 		</xsl:message>
 		<xsl:message>****Algorithm: <xsl:value-of select="$vAlgorithm"/>
 		</xsl:message>
-		<xsl:message>****Key: <xsl:value-of select="$vKey"/>
-		</xsl:message>
+		<!-- The console log for the text and key are commented out to ensure the logs will not capture the plain text or key, but you may uncomment for debugging. -->
+		<!--<xsl:message>****Key: <xsl:value-of select="$vKey"/>
+		</xsl:message>-->
 
 		<xsl:variable name="vDecrypt">
 			<xsl:value-of select="dp:decrypt-data($vAlgorithm,$vKey,$vEncryptedText)"/>
