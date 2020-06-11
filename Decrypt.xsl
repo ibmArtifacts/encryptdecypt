@@ -15,22 +15,22 @@
 	<xsl:template match="/">
 		<xsl:variable name="vAlgorithm" select="'http://www.w3.org/2001/04/xmlenc#aes256-cbc'"/>
 		<xsl:variable name="vKey" select="'name:passwordEncrypt'"/>
-		<xsl:variable name="vEncryptedPassword" select="//*[local-name()='encryptedtext']"/>
+		<xsl:variable name="vEncryptedText" select="//*[local-name()='encryptedtext']"/>
 
-		<xsl:message>****Password: <xsl:value-of select="$vEncryptedPassword"/>
+		<xsl:message>****Encrypted Text: <xsl:value-of select="$vEncryptedText"/>
 		</xsl:message>
 		<xsl:message>****Algorithm: <xsl:value-of select="$vAlgorithm"/>
 		</xsl:message>
 		<xsl:message>****Key: <xsl:value-of select="$vKey"/>
 		</xsl:message>
 
-		<xsl:variable name="vDecyphered">
-			<xsl:value-of select="dp:decrypt-data($vAlgorithm,$vKey,$vEncryptedPassword)"/>
+		<xsl:variable name="vDecrypt">
+			<xsl:value-of select="dp:decrypt-data($vAlgorithm,$vKey,$vEncryptedText)"/>
 		</xsl:variable>
 
 		<decryptedResponse>
 			<decryptedText>
-				<xsl:value-of select="$vDecyphered"/>
+				<xsl:value-of select="$vDecrypt"/>
 			</decryptedText>
 		</decryptedResponse>
 	</xsl:template>
