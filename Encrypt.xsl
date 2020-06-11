@@ -13,22 +13,19 @@
 
 	<xsl:template match="/">
 		<xsl:variable name="vAlgorithm" select="'http://www.w3.org/2001/04/xmlenc#aes256-cbc'"/>
-		<xsl:variable name="vPlainTextPass" select="//*[local-name()='ClearText']"/>
-		<xsl:variable name="vUsername" select="//*[local-name()='username']"/>
-		<xsl:variable name="vKey" select="'name:passwordEncrypt'"/>
+		<xsl:variable name="vPlainText" select="//*[local-name()='ClearText']"/>
+		<xsl:variable name="vKey" select="'name:EncryptDecryptKey'"/>
 
-		<!-- The console log for pass is commented out to ensure the logs will not capture the plain text password, but you may uncomment for debugging. -->
-		<!--<xsl:message>****Password: <xsl:value-of select="$vPlainTextPass"/>
-		</xsl:message>-->
-		<xsl:message>****Algorithm: <xsl:value-of select="$vAlgorithm"/>
+		<!-- The console log for the text and key are commented out to ensure the logs will not capture the plain text or key, but you may uncomment for debugging. -->
+		<!-- <xsl:message>****PlainText: <xsl:value-of select="$vPlainText"/>
 		</xsl:message>
 		<xsl:message>****Key: <xsl:value-of select="$vKey"/>
-		</xsl:message>
-		<xsl:message>****Username: <xsl:value-of select="$vUsername"/>
+		</xsl:message> -->
+		<xsl:message>****Algorithm: <xsl:value-of select="$vAlgorithm"/>
 		</xsl:message>
 
 		<xsl:variable name="vCipherString">
-			<xsl:value-of select="dp:encrypt-string($vAlgorithm,$vKey,$vPlainTextPass)"/>
+			<xsl:value-of select="dp:encrypt-string($vAlgorithm,$vKey,$vPlainText)"/>
 		</xsl:variable>
 
 		<encryptResponse>
