@@ -14,7 +14,7 @@
 
 	<xsl:template match="/">
 		<xsl:variable name="vAlgorithm" select="'http://www.w3.org/2001/04/xmlenc#aes256-cbc'"/>
-		<xsl:variable name="vKey" select="'name:passwordEncrypt'"/>
+		<xsl:variable name="vKey" select="'name:EncryptDecryptKey'"/>
 		<xsl:variable name="vEncryptedText" select="//*[local-name()='encryptedtext']"/>
 
 		<xsl:message>****Encrypted Text: <xsl:value-of select="$vEncryptedText"/>
