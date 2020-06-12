@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "e77f1ac2-4fec-40cf-9123-6630b7e5daec",
+		"name": "Encryption/Decryption Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Encrypt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<ClearText>test</ClearText>"
+				},
+				"url": {
+					"raw": "http://{{url}}:{{port}}/encrypt",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"encrypt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Decrypt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<EncryptedText>3ZcrAoK/nz8KTiQ1tdg92LW7iLvpfyDc8a5cbkhd1xI=</EncryptedText>"
+				},
+				"url": {
+					"raw": "http://{{url}}:{{port}}/decrypt",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"decrypt"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
