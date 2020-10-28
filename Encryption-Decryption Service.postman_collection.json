@@ -15,8 +15,7 @@
 					"raw": "<ClearText>test</ClearText>"
 				},
 				"url": {
-					"raw": "http://{{url}}:{{port}}/encrypt",
-					"protocol": "http",
+					"raw": "{{url}}:{{port}}/encrypt",
 					"host": [
 						"{{url}}"
 					],
@@ -38,8 +37,7 @@
 					"raw": "<EncryptedText>3ZcrAoK/nz8KTiQ1tdg92LW7iLvpfyDc8a5cbkhd1xI=</EncryptedText>"
 				},
 				"url": {
-					"raw": "http://{{url}}:{{port}}/decrypt",
-					"protocol": "http",
+					"raw": "{{url}}:{{port}}/decrypt",
 					"host": [
 						"{{url}}"
 					],
@@ -50,6 +48,40 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "38eddfae-cb22-4a66-8f81-4ebf4b385ff5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "f0261a91-c91d-43fd-af7d-a6413b5fdc55",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "50ec9817-ed1d-4fc1-80b9-a4821ba22f80",
+			"key": "url",
+			"value": ""
+		},
+		{
+			"id": "83cb91a4-c742-41af-b2a9-9eaf2e4b12fa",
+			"key": "port",
+			"value": "8888"
 		}
 	],
 	"protocolProfileBehavior": {}
